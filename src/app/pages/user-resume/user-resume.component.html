@@ -1,0 +1,216 @@
+<div class="content">
+    <img class="imgBackground" src="assets/textures/figma_18_texture.png" />
+
+    <div class="logo">
+        <img src="./../../../assets/icons/logo_small.svg" alt="">
+        <div class="name-logo">
+            <span id="name">MY JOURNAL</span>
+            <span id="subname">CONECTE</span>
+        </div>
+    </div>
+
+    <span id="register-text">Conecte, Exponha, Prospere: os passos da sua jornada começam aqui!</span>
+
+        <div class="form">
+            <form class="form-layout" [formGroup]="createResumeForm">
+                <span id="title">Cadastro do Currículo</span>
+                <span id="forms-title">Nome Completo</span>
+                <mat-form-field class="example-full-width">
+                <input 
+                type="text"
+                name="name" 
+                placeholder="Ex. Joaquim Luís da Costa" 
+                matInput formControlName="name"
+                >
+                </mat-form-field>
+
+                <span id="forms-title">E-mail</span>
+                <mat-form-field class="example-full-width">
+                    <input
+                    type="email"
+                    name="email"
+                    placeholder="Ex. joaquim.costa@gmail.com"
+                    matInput formControlName="email"
+                    >
+                    <mat-icon matSuffix>email</mat-icon>
+                </mat-form-field>
+
+                  <table class="example-full-width" cellspacing="0"><tr>
+                    <td>
+                      <span id="forms-title">Telefone</span>
+                        <mat-form-field class="example-full-width">
+                        <span matPrefix>+55 &nbsp;</span>
+                        <input 
+                        type="tel"
+                        name="phoneNumber"
+                        maxlength="11" 
+                        matInput formControlName="phoneNumber" 
+                        placeholder="41993452758" 
+                        >
+                        <mat-icon matSuffix>phone</mat-icon>
+                        <mat-error *ngIf="createResumeForm.get('phoneNumber')?.hasError('required')">
+                          Telefone é <strong>obrigatório</strong>
+                        </mat-error>
+                      </mat-form-field></td>
+                    <td>
+                      <span id="forms-title">Data de Nascimento</span>
+                        <mat-form-field>
+                        <mat-label>dd/mm/aaaa</mat-label>
+                        <input 
+                        name="birthDate"
+                        matInput 
+                        [matDatepicker]="picker" 
+                        matInput formControlName="birthDate" 
+                        >
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                        <mat-error *ngIf="createResumeForm.get('birthDate')?.hasError('required')">
+                          Data de nascimento é <strong>obrigatório</strong>
+                        </mat-error>
+                      </mat-form-field></td>
+                  </tr></table>
+
+                  <span id="forms-title">Endereço</span>
+                  <table class="example-full-width" cellspacing="0"><tr>
+                    <td><mat-form-field class="example-full-width">
+                      <mat-label>Logradouro</mat-label>
+                      <input 
+                      type="text"
+                      name="street"
+                      matInput formControlName="street" 
+                      placeholder="Ex. Rua do Fogo" 
+                      >
+                      <mat-error *ngIf="createResumeForm.get('street')?.hasError('required')">
+                        Logradouro é <strong>obrigatório</strong>
+                      </mat-error>
+                    </mat-form-field></td>
+                    <td><mat-form-field class="small-field">
+                      <mat-label>Número</mat-label>
+                      <input 
+                      type="number"
+                      name="streetNumber"
+                      matInput formControlName="streetNumber" 
+                      placeholder="Ex: 63" 
+                      >
+                      <mat-error *ngIf="createResumeForm.get('streetNumber')?.hasError('required')">
+                        Número é <strong>obrigatório</strong>
+                      </mat-error>
+                    </mat-form-field></td>
+                  </tr></table>
+                  <table class="example-full-width" cellspacing="0"><tr>
+                    <td><mat-form-field class="example-full-width">
+                      <mat-label>Bairro</mat-label>
+                      <input 
+                      type="text"
+                      name="district"
+                      matInput formControlName="district" 
+                      placeholder="Ex. Rebouças" 
+                      >
+                      <mat-error *ngIf="createResumeForm.get('district')?.hasError('required')">
+                        Bairro é <strong>obrigatório</strong>
+                      </mat-error>
+                    </mat-form-field></td>
+                    <td><mat-form-field class="example-full-width">
+                      <mat-label>Cidade</mat-label>
+                      <input
+                      type="text"
+                      name="city"
+                      matInput formControlName="city" 
+                      placeholder="Ex: Curitiba" 
+                      >
+                      <mat-error *ngIf="createResumeForm.get('city')?.hasError('required')">
+                        Cidade é <strong>obrigatório</strong>
+                      </mat-error>
+                    </mat-form-field></td>
+                    <td><mat-form-field class="small-field">
+                        <mat-label>Estado</mat-label>
+                        <select 
+                        name="state" 
+                        matNativeControl 
+                        matInput formControlName="state" 
+                        >
+                        <option label="Selecione"></option>
+                          <option value="AC">AC</option>
+                          <option value="AL">AL</option>
+                          <option value="AP">AP</option>
+                          <option value="AM">AM</option>
+                          <option value="BA">BA</option>
+                          <option value="CE">CE</option>
+                          <option value="DF">DF</option>
+                          <option value="ES">ES</option>
+                          <option value="GO">GO</option>
+                          <option value="MA">MA</option>
+                          <option value="MT">MT</option>
+                          <option value="MS">MS</option>
+                          <option value="MG">MG</option>
+                          <option value="PA">PA</option>
+                          <option value="PB">PB</option>
+                          <option value="PR">PR</option>
+                          <option value="PR">PR</option>
+                          <option value="PE">PE</option>
+                          <option value="PI">PI</option>
+                          <option value="RJ">RJ</option>
+                          <option value="RN">RN</option>
+                          <option value="RS">RS</option>
+                          <option value="RO">RO</option>
+                          <option value="RR">RR</option>
+                          <option value="SC">SC</option>
+                          <option value="SP">SP</option>
+                          <option value="SE">SE</option>
+                          <option value="TO">TO</option>
+                        </select>
+                        <mat-error *ngIf="createResumeForm.get('state')?.hasError('required')">
+                          Estado é <strong>obrigatório</strong>
+                        </mat-error>
+                      </mat-form-field></td>
+                  </tr></table>
+
+                  <span id="forms-title">Objetivo Profissional</span>
+                  <mat-form-field class="example-full-width">
+                    <textarea 
+                    name="professionalObjective"
+                    matInput formControlName="professionalObjective" 
+                    placeholder="Meu objetivo profissional é..."
+                    ></textarea>
+                  </mat-form-field>
+
+                  <span id="forms-title">Minhas Experiências</span>
+                  <mat-form-field class="example-full-width">
+                    <textarea 
+                    name="professionalExperience"
+                    matInput formControlName="professionalExperience" 
+                    placeholder="Atuei dois anos como..."
+                    ></textarea>
+                  </mat-form-field>
+
+                  <span id="forms-title">Cursos e Certificados</span>
+                  <mat-form-field class="example-full-width">
+                    <textarea 
+                    name="coursesAndCertifications"
+                    matInput formControlName="coursesAndCertifications" 
+                    matInput placeholder="Participação em..."
+                    ></textarea>
+                  </mat-form-field>
+
+                  <span id="forms-title">Idiomas</span>
+                  <mat-form-field class="example-full-width">
+                    <textarea 
+                    name="languages"
+                    matInput formControlName="languages" 
+                    placeholder="Inglês avançado, boa escrita e leitura..."
+                    ></textarea>
+                  </mat-form-field>
+
+                  <div class="send-button">
+                    <button 
+                    type="submit" 
+                    value="Submit" 
+                    mat-fab extended color="primary"
+                    (click)="OnSubmit()">
+                        <mat-icon>check_circle</mat-icon>
+                        Concluído</button>
+                </div>
+
+            </form>
+        </div>
+    </div>

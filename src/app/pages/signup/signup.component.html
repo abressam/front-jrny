@@ -1,0 +1,97 @@
+<div class="container">
+  <img class="imgBackground" src="assets/textures/figma_18_texture.png" />
+
+  <div class="content">
+    <div class="information-container">
+      <div class="logo-content">
+        <img src="./../../../assets/icons/logo_small_purple.svg" alt="logo" />
+      </div>
+
+      <div>
+        <h1>MY JOURNAL</h1>
+        <span>
+          <p>
+            Destaque suas conquistas profissionais de maneira única e
+            impressionante! Crie seu perfil personalizado conosco e transforme-o
+            em um currículo poderoso.
+          </p>
+          <p>
+            Mostre suas habilidades e trajetória de sucesso de forma cativante.
+          </p>
+          <p>
+            Junte-se à nossa comunidade de profissionais e abra as portas para
+            novas oportunidades.
+          </p>
+
+          <p>Cadastre-se agora e comece a construir o seu futuro!</p>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-container">
+      <h1>Cadastrar</h1>
+
+      <form class="form-content" [formGroup]="signupForm">
+        <span>
+          <label for="name">NOME <b>COMPLETO</b></label>
+        </span>
+          <mat-form-field>
+            <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Digite seu nome completo"
+            matInput formControlName="name"
+          />
+          <mat-error *ngIf="signupForm.get('name')?.hasError('required')">
+            Nome completo é <strong>obrigatório</strong>
+          </mat-error>
+          </mat-form-field>
+        <span>
+          <label for="email">EMAIL DO <b>USUÁRIO</b></label>
+        </span>
+          <mat-form-field>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Digite seu e-mail"
+            matInput formControlName="email" 
+          />
+          <mat-error *ngIf="signupForm.get('email')?.hasError('required')">
+            Email é <strong>obrigatório</strong>
+          </mat-error>
+          <mat-error *ngIf="signupForm.get('email')?.hasError('email')">
+            Email está em formato <strong>incorreto</strong>
+          </mat-error>
+          </mat-form-field>
+        <span>
+          <label for="password">SENHA SUPER <b>SECRETA</b></label>
+        </span>
+          <mat-form-field>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Digite sua senha"
+            matInput formControlName="password" 
+          />
+          <mat-error *ngIf="signupForm.get('password')?.hasError('required')">
+            Senha é <strong>obrigatório</strong>
+          </mat-error>
+          </mat-form-field>
+
+        <span class="form-button-content">
+          <a class="form-button-content__create-account" href="/signin">
+            Já tenho uma conta
+          </a>
+          <button 
+          type="submit" 
+          class="form-button-content__signin"
+          (click)="this.onSubmit()"
+          >Criar conta</button>
+        </span>
+      </form>
+    </div>
+  </div>
+</div>

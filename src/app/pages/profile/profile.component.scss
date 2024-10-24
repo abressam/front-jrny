@@ -1,0 +1,144 @@
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    margin: 20px;
+}
+
+#title {
+    font-family: IBM-Plex-Mono-bold;
+    font-size: 24px;
+    color: #9A9A9A;
+    padding: 20px;
+}
+
+.info-content {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 1rem;
+    margin: 60px 30px 30px 30px;
+    width: 100%;
+    overflow-y: auto;
+    position: relative;
+    flex-shrink: 0;
+    border-radius: 16px;
+    background: #FFF;
+    box-shadow: 0px 4px 64px 0px rgba(0, 0, 0, 0.08);
+    max-width: 800px;
+    max-height: 75vh;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+}
+
+.curriculum-info {
+    margin-left: 20px;
+    max-width: 530px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title-curriculum {
+    font-family: IBM-Plex-Mono-bold;
+    font-size: 16px;
+    color: #9A9A9A;
+    padding: 10px;
+}
+
+.body-curriculum {
+    display: flex;
+    font-family: IBM-Plex-Mono-medium;
+    text-align: justify;
+    font-size: 14px;
+    color: #000;
+    margin-left: 10px;
+    text-indent: 1.5em;
+    width: 95%;
+}
+
+.curriculum-text {
+    margin-top: 20px;
+}
+
+.curriculum-item {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.organize-cards {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.app-card {
+    box-sizing: border-box;
+    height: 100%; /* ou height: 100vh; */
+}
+
+button {
+    border-radius: 6px;
+    background-color: #A576BC;
+    color: #fff;
+	border: none;
+	padding: 8px;
+    font-size: 12px;
+	font-family: IBM-Plex-Mono-bold;
+	cursor: pointer;
+	outline: inherit;
+}
+  
+button:hover {
+    color: #fff;
+    background-color: #c68ee1;
+}
+
+.new-curriculum {
+    display: flex;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 0px 0px 20px;
+}
+
+#noItem {
+    padding: 20px;
+    font-size: 14px;
+	font-family: IBM-Plex-Mono-bold;
+    color: #9A9A9A;
+}
+
+.project-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  
+.app-card {
+    width: calc(50% - 4px);
+}
+
+.delete-account {
+    display: flex;
+    width: 100%;
+    flex-direction: row-reverse;
+}

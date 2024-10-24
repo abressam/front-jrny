@@ -1,0 +1,35 @@
+<div class="create-feed">
+    <div class="feed-intro">
+        <span id="intro-user-name" *ngIf="userName">Olá, {{userName}}!</span>
+        <button 
+        class="feedButton"
+        mat-button 
+        (click)="this.openFeedDialog()">
+        <mat-icon>forum</mat-icon>
+        Adicione uma publicação</button>
+    </div>
+</div>
+
+<div class="info">
+    <div class="info-content">
+        <div class="title">
+            <div class="title-name">
+                <img src="./../../../assets/icons/feed_icon.svg" alt="">
+                <span id="title">Publicações</span>
+            </div>       
+        </div>
+
+        <ng-container *ngIf="feeds && feeds.length > 0; else noComments">
+            <div class="organize-cards" *ngFor="let feed of feeds">
+                <app-feed-card [feedData]="feed"></app-feed-card>
+            </div>
+        </ng-container>
+
+        <ng-template #noComments>
+            <span id="noItem">Não há comentários cadastrados</span>
+        </ng-template>
+    </div>
+</div>
+
+
+

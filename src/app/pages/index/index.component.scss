@@ -1,0 +1,92 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+button {
+    background-color: #A576BC;
+}
+
+.initial-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 50px;
+    width: 100%;
+}
+
+.about-my-journal {
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    padding: 45px;
+    text-align: left;
+    vertical-align: middle;
+    line-height: 40px;
+    gap: 25px;
+}
+
+p,span {
+    font-family: "IBM-Plex-Mono-regular";
+}
+
+#logo-text {
+    color: #A576BC;
+}
+
+#community-projects-title {
+    font-size: 28px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.about-community {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+    margin: 25px;
+}
+
+#community-text {
+    font-size: 18px;
+    text-align: justify;
+    width: 80%;
+}
+
+.text-community-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.example-card {
+    max-width: 400px;
+    height: 320px;
+  }
+  
+.example-header-image {
+    background-size: cover;
+}
+
+.cards-concepts {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 25px;
+    margin: 0px 50px 0px 50px;
+}
+
+#text-content-card {
+    font-size: 16px;
+    font-family: "IBM-Plex-Mono-regular";
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

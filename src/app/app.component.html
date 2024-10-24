@@ -1,0 +1,8 @@
+<div *ngIf="account.isLoggedIn">
+    <app-menu-is-logged></app-menu-is-logged>
+</div>
+<div *ngIf="!account.isLoggedIn">
+    <app-menu-home-is-not-logged></app-menu-home-is-not-logged>
+</div>
+
+<router-outlet></router-outlet>

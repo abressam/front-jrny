@@ -1,0 +1,127 @@
+<div class="content">
+    <div class="info-content">
+        <div class="title">
+            <div class="title-name">
+                <img src="./../../../assets/icons/curriculum_icon.svg" alt="">
+                <span id="title">Currículo</span>
+            </div>
+            <ng-container *ngIf="curriculum && curriculum.length > 0">
+                <app-edit-button></app-edit-button>
+            </ng-container>
+        </div>
+        <ng-container class="curriculum-info" *ngIf="curriculum && curriculum.length > 0; else noCurriculum">
+
+            <div class="curriculum-item">
+                <span class="title-curriculum">Nome:</span>
+                <span class="body-curriculum">{{ curriculum[0].name }}</span>
+            </div>
+        
+            <div class="curriculum-item">
+                <span class="title-curriculum">Email:</span>
+                <span class="body-curriculum">{{ curriculum[0].email }}</span>
+            </div>
+
+            <div class="curriculum-item">
+                <span class="title-curriculum">Telefone:</span>
+                <span class="body-curriculum">{{ curriculum[0].phoneNumber }}</span>
+            </div>
+
+            <div class="curriculum-item">
+                <span class="title-curriculum">Data de Nascimento:</span>
+                <span class="body-curriculum">{{ curriculum[0].birthDate }}</span>
+            </div>
+
+            <div class="curriculum-item">
+                <span class="title-curriculum">Logradouro:</span>
+                <span class="body-curriculum">{{ curriculum[0].street }}</span>
+            </div>
+
+            <div class="curriculum-item">
+                <span class="title-curriculum">Número:</span>
+                <span class="body-curriculum">{{ curriculum[0].streetNumber }}</span>
+            </div>
+
+            <div class="curriculum-item">
+                <span class="title-curriculum">Bairro:</span>
+                <span class="body-curriculum">{{ curriculum[0].district }}</span>
+            </div>
+
+            <div class="curriculum-item">
+                <span class="title-curriculum">Cidade:</span>
+                <span class="body-curriculum">{{ curriculum[0].city }}</span>
+            </div>
+
+            <div class="curriculum-item">
+                <span class="title-curriculum">Estado(UF):</span>
+                <span class="body-curriculum">{{ curriculum[0].state }}</span>
+            </div>
+
+            <div class="curriculum-text">
+                <div class="curriculum-item">
+                    <span class="title-curriculum">Objetivo Profissional</span>
+                </div>
+                <p class="body-curriculum">{{ curriculum[0].professionalObjective }}</p>
+            </div>
+
+            <div class="curriculum-text">
+                <div class="curriculum-item">
+                    <span class="title-curriculum">Experiências</span>
+                </div>
+                <span class="body-curriculum">{{ curriculum[0].professionalExperience }}</span>
+            </div>
+
+
+            <div class="curriculum-text">
+                <div class="curriculum-item">
+                    <span class="title-curriculum">Cursos e Certificações</span>
+                </div>
+                <span class="body-curriculum">{{ curriculum[0].coursesAndCertifications }}</span>
+            </div>
+
+            <div class="curriculum-text">
+                <div class="curriculum-item">
+                    <span class="title-curriculum">Idiomas</span>
+                </div>
+                <span class="body-curriculum">{{ curriculum[0].languages }}</span>
+            </div>
+
+        </ng-container>
+
+        <ng-template #noCurriculum>
+            <span id="noItem">Currículo não cadastrado</span>
+            <button 
+            class="new-curriculum"
+            (click)="this.redirectCurriculum()">
+                Cadastrar
+            </button> 
+        </ng-template>
+    </div>
+
+    <div class="info-content">
+        <div class="title">
+            <div class="title-name">
+                <img src="./../../../assets/icons/project_icon.svg" alt="">
+                <span id="title">Projetos</span>
+            </div>
+                <button 
+                (click)="this.redirectCreateProject()">
+                    Novo projeto
+                </button>            
+        </div>
+        <!-- Verifica se a lista de projetos existe e tem pelo menos um elemento -->
+        <ng-container *ngIf="projects && projects.length > 0; else noProjects">
+            <div class="organize-cards" *ngFor="let project of projects">
+                <app-card [projectData]="project"></app-card>
+            </div>
+        </ng-container>
+
+        <!-- Mensagem quando não há projetos -->
+        <ng-template #noProjects>
+            <span id="noItem">Não há projetos cadastrados</span>
+        </ng-template>
+    </div>
+</div>
+
+<div class="delete-account">
+    <app-delete-account-button></app-delete-account-button>
+</div>
