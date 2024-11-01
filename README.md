@@ -71,11 +71,22 @@ Assim, separamos os serviços e operações que o `create-project.component.ts` 
 
 Com isso, o componente fica **mais simples**, possuindo menos responsabilidades.
 
-## Melhoria 3: ...
+## Melhoria 3: Criar parâmetros de forma modular
 
 > [!NOTE]
-> Padrão de projeto escolhido: **...**
+> Padrão de projeto escolhido: **Builder**
 
+Para esse caso, temos a seguinte situação no arquivo `curriculum.service.ts`:
 
+![image](https://github.com/user-attachments/assets/c6a7956f-c063-44d4-9bfc-1f42cb49f5b5)
 
+Para isso, podemos contruir a classe ParamsBuilder para facilitar a criação das instâncias de HttpParams
+
+![image](https://github.com/user-attachments/assets/135d8e28-aecc-47f1-94bc-64d624b23c1b)
+
+Então, deixamos o `curriculum.service.ts` da seguinte forma:
+
+![msg9](https://github.com/user-attachments/assets/e047ce1e-e898-406a-a8d1-156e71873e13)
+
+Com essa modificação, deixamos a Params está **isolada**. Se for necessário adicionar/remover parâmetros, é possível fazer isso **sem alterar cada método individualmente**.
 
