@@ -103,7 +103,7 @@ Para isso, vamos criar o arquivo `validation.service.ts` com duas funções, sen
 
 ![image](https://github.com/user-attachments/assets/f54f8b5d-6ea5-4964-b91c-916ad7ea346c)
 
-E agora, o arquivo ` resume-form.factory.ts` para a validação de cada campo:
+E agora, o arquivo `resume-form.factory.ts` para a validação de cada campo:
 
 ![image](https://github.com/user-attachments/assets/f673b796-e93c-4f17-afd3-717ce9720fa2)
 
@@ -111,8 +111,41 @@ Assim, o componente ficará da seguinte forma:
 
 ![msg11](https://github.com/user-attachments/assets/464defcc-3763-413d-9155-02827a7000b5)
 
+## Melhoria 5: Encapsular as operações de edição, exclusão e visualização
 
+> [!NOTE]
+> Padrão de projeto escolhido: **Command Pattern**
 
+Vamos analisar o seguinte componente `card.component.ts`:
 
+![image](https://github.com/user-attachments/assets/89b60920-22a6-4e8b-bf62-6f3eb692eb95)
 
+![image](https://github.com/user-attachments/assets/704bf883-798c-40d1-899b-fcc215c5fc4e)
 
+![image](https://github.com/user-attachments/assets/44dbb140-56fa-401e-9bb9-9801ea68e9fd)
+
+Possuímos três operações sendo feitas, e se referem a botões distintos, mas presentes na mesma estrutura. Sendo assim, a modificação consiste em chamar cada comando ao invés de implementar a lógica diretamente nos eventos.
+
+Dessa forma, podemos criar esses arquivos:
+
+`commands.ts`
+
+![image](https://github.com/user-attachments/assets/c1460e87-3a4e-499a-a7e8-951fac0c44a6)
+
+`edit-project.command.ts`
+
+![image](https://github.com/user-attachments/assets/074ce0f8-9bf3-4698-bef9-13c43d017943)
+
+`delete-project.command.ts`
+
+![image](https://github.com/user-attachments/assets/a95d4ba8-8007-4b89-a164-058e03cfcb83)
+
+`view-project.command.ts`
+
+![image](https://github.com/user-attachments/assets/734fba82-be55-41eb-9843-e1b12a01a3ef)
+
+E com isso, o arquivo `card.component.ts` ficará da seguinte forma:
+
+![image](https://github.com/user-attachments/assets/1d7b497c-a80d-4983-81ee-636f480c3af3)
+
+A partir dessas mudanças, se torna mais fáceis adicionar novas ações, além de poder testar cada comando separadamente.
