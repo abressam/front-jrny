@@ -8,6 +8,8 @@
 
 # Relatório
 
+O objetivo desse trabalho foi criar um relatório para apresentar melhorias, utilizando Padrões de Projetos. O projeto escolhido é um front-end desenvolvido em Angular Typescript durante o 4º período do curso de Sistemas de Informação. O layout criado foi usado para um web site de portfólios, onde o usuário poderia cadastrar seus dados, currículo e suas criações, com o propósito de divulgá-las.
+
 ## Melhoria 1: Remover repetição de código
 
 > [!NOTE]
@@ -74,7 +76,7 @@ Com isso, o componente fica **mais simples**, possuindo menos responsabilidades.
 ## Melhoria 3: Criar parâmetros de forma modular
 
 > [!NOTE]
-> Padrão de projeto escolhido: **Builder**
+> Padrão de projeto escolhido: **Builder Pattern**
 
 Para esse caso, temos a seguinte situação no arquivo `curriculum.service.ts`:
 
@@ -124,7 +126,7 @@ Vamos analisar o seguinte componente `card.component.ts`:
 
 ![image](https://github.com/user-attachments/assets/44dbb140-56fa-401e-9bb9-9801ea68e9fd)
 
-Possuímos três operações sendo feitas, e se referem a botões distintos, mas presentes na mesma estrutura. Sendo assim, a modificação consiste em chamar cada comando ao invés de implementar a lógica diretamente nos eventos.
+Possuímos três operações sendo feitas e se referem a botões distintos, mas presentes na mesma estrutura. Sendo assim, a modificação consiste em chamar cada comando ao invés de implementar a lógica diretamente nos eventos.
 
 Dessa forma, podemos criar esses arquivos:
 
@@ -149,3 +151,17 @@ E com isso, o arquivo `card.component.ts` ficará da seguinte forma:
 ![image](https://github.com/user-attachments/assets/1d7b497c-a80d-4983-81ee-636f480c3af3)
 
 A partir dessas mudanças, se torna mais fáceis adicionar novas ações, além de poder testar cada comando separadamente.
+
+# Conclusão
+
+Por fim, foram apresentadas cinco melhorias distintas e quatro padrões de projeto aplicados:
+
+* Factory Pattern
+* Facade Pattern
+* Builder Pattern
+* Command Pattern
+
+Essas alterações ajudam na organização, manutenção e legibilidade do projeto sem modificar seu compotamento.
+
+> [!NOTE]
+> Foram usados apenas alguns arquivos como exemplo, no entanto, outros arquivos do projeto que possuem uma estrutura similar usariam principalmente o **Factory Pattern** e o **Facade Pattern** para melhorias!
