@@ -8,7 +8,7 @@
 
 # Relatório
 
-O objetivo desse trabalho foi criar um relatório para apresentar melhorias, utilizando Padrões de Projetos. O projeto escolhido é um front-end desenvolvido em Angular Typescript durante o 4º período do curso de Sistemas de Informação. O layout criado foi usado para um web site de portfólios, onde o usuário poderia cadastrar seus dados, currículo e suas criações, com o propósito de divulgá-las.
+O objetivo deste trabalho foi elaborar um relatório propondo melhorias através do uso de padrões de projeto. O projeto analisado é um front-end desenvolvido em Angular e TypeScript durante o 4º período do curso de Sistemas de Informação. O layout foi projetado para um site de portfólios, permitindo que o usuário cadastre seus dados, currículo e criações com a finalidade de divulgá-los.
 
 ## Melhoria 1: Remover repetição de código
 
@@ -35,6 +35,8 @@ Dessa maneira, o **comportamento** das classes **não é alterado** e se torna m
 * Criação da variável `baseUrl`
 * Adição das classes HttpOptionsFactory e ConfigService ao construtor
 * Utilização das novas classes nos métodos
+
+### 💡 Protótipo do Código Final
 
 ![image](https://github.com/user-attachments/assets/1294e479-8fec-4b70-bfdc-d66e6d1d5f8a)
 
@@ -65,6 +67,8 @@ Aproveitando para também adicionar as seguintes funções: convertFileToBase64,
 
 Assim, separamos os serviços e operações que o `create-project.component.ts` precisa. Então, ao utilizar o padrão, ficaria da seguinte forma:
 
+### 💡 Protótipo do Código Final
+
 ![msg6](https://github.com/user-attachments/assets/f2786d8d-e15c-47f1-b754-dfc8441b338d)
 
 ![msg7](https://github.com/user-attachments/assets/d039fdaf-75fd-490f-9bb1-9d8f1b06aaa3)
@@ -87,6 +91,8 @@ Para isso, podemos contruir a classe ParamsBuilder para facilitar a criação da
 ![image](https://github.com/user-attachments/assets/135d8e28-aecc-47f1-94bc-64d624b23c1b)
 
 Então, deixamos o `curriculum.service.ts` da seguinte forma:
+
+### 💡 Protótipo do Código Final
 
 ![msg9](https://github.com/user-attachments/assets/6fd6cc70-3c86-4749-be0b-7bce207eca88)
 
@@ -111,7 +117,11 @@ E agora, o arquivo `resume-form.factory.ts` para a validação de cada campo:
 
 Assim, o componente ficará da seguinte forma:
 
+### 💡 Protótipo do Código Final
+
 ![msg11](https://github.com/user-attachments/assets/464defcc-3763-413d-9155-02827a7000b5)
+
+Com isso, deixamos o componente **mais simples** e separamos as responsabilidades.
 
 ## Melhoria 5: Encapsular as operações de edição, exclusão e visualização
 
@@ -147,6 +157,8 @@ Dessa forma, podemos criar esses arquivos:
 ![image](https://github.com/user-attachments/assets/734fba82-be55-41eb-9843-e1b12a01a3ef)
 
 E com isso, o arquivo `card.component.ts` ficará da seguinte forma:
+
+### 💡 Protótipo do Código Final
 
 ![image](https://github.com/user-attachments/assets/1d7b497c-a80d-4983-81ee-636f480c3af3)
 
